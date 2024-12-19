@@ -1,0 +1,31 @@
+{
+  "name": "pdg-media-gas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "clone": "node scripts/clone.js",
+    "build:piyo": "node ./scripts/build.js piyo",
+    "build:post-generator": "node ./scripts/build.js post-generator",
+    "deploy:dev:piyo": "node ./scripts/deploy.js dev piyo",
+    "deploy:post-generator": "node ./scripts/deploy.js prod post-generator",
+    "format": "biome format --write ./packages",
+    "format:common": "biome format --write ./packages/common",
+    "format:post-generator": "pnpm format:common && biome format --write ./packages/post-generator",
+    "lint": "biome lint ./packages"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@biomejs/biome": "1.9.3",
+    "@types/google-apps-script": "^1.0.84",
+    "esbuild": "^0.24.0",
+    "esbuild-gas-plugin": "^0.8.0",
+    "lefthook": "^1.7.22",
+    "typescript": "^5.6.3"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
